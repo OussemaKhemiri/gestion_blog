@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Introduction à Angular",
+      "content": "Angular est un framework puissant...",
+      "author": "John Doe",
+      "date": "2024-01-01"
+    },
+    {
+      "id": "2",
+      "title": "Maîtriser TypeScript",
+      "content": "TypeScript est un langage orienté objet...",
+      "author": "Jane Smith",
+      "date": "2024-02-15"
+    },
+    {
+      "id": "89a6",
+      "title": "aaaaaa",
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "author": "abc xyz",
+      "date": "2025-05-05"
+    }
+  ]
+}

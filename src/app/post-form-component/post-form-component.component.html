@@ -1,0 +1,39 @@
+<h2>Créer un Post</h2>
+
+<form #postForm="ngForm" (ngSubmit)="save()">
+  <div>
+    <label for="title">Titre:</label>
+    <input id="title" name="title" [(ngModel)]="post.title" required maxlength="25">
+    <div *ngIf="postForm.form.controls['title']?.invalid && postForm.form.controls['title']?.touched">
+      <small *ngIf="postForm.form.controls['title']?.errors?.['required']">Le titre est requis.</small>
+      <small *ngIf="postForm.form.controls['title']?.errors?.['maxlength']">Max 25 caractères.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="content">Contenu:</label>
+    <textarea id="content" name="content" [(ngModel)]="post.content" required></textarea>
+    <div *ngIf="postForm.form.controls['content']?.invalid && postForm.form.controls['content']?.touched">
+      <small>Le contenu est requis.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="author">Auteur:</label>
+    <input id="author" name="author" [(ngModel)]="post.author" required>
+    <div *ngIf="postForm.form.controls['author']?.invalid && postForm.form.controls['author']?.touched">
+      <small>L'auteur est requis.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="date">Date (YYYY-MM-DD):</label>
+    <input id="date" name="date" [(ngModel)]="post.date" required pattern="^\d{4}-\d{2}-\d{2}$">
+    <div *ngIf="postForm.form.controls['date']?.invalid && postForm.form.controls['date']?.touched">
+      <small *ngIf="postForm.form.controls['date']?.errors?.['required']">La date est requise.</small>
+      <small *ngIf="postForm.form.controls['date']?.errors?.['pattern']">Format invalide (YYYY-MM-DD).</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="postForm.invalid">Ajouter Post</button>
+</form>
